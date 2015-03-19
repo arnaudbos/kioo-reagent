@@ -24,6 +24,8 @@
                   (lifecycle {
                               :did-mount (fn [this]
                                            (.log js/console "did-mount!"))
+                              :should-update (fn [this next-props next-state]
+                                               (not= (.-props this) next-props))
                               }))})
 
 
